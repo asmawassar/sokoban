@@ -30,7 +30,7 @@ Graphique::Graphique()
     background.loadFromFile("res/background.jpg");
     s_background.setTexture(background);
 
-     Manual.loadFromFile("res/manual.jpeg");
+     Manual.loadFromFile("res/manual.png");
     s_Manual.setTexture(Manual);
 
     character.loadFromFile("res/textures.png");

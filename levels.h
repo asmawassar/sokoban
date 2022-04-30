@@ -1,7 +1,6 @@
 #ifndef LEVELS_H
 #define LEVELS_H
 #include "button.h"
-#include "main.h"
 
 class levels
 {
