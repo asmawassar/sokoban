@@ -14,11 +14,11 @@ Graphique::Graphique()
     sound.play();
 
     lvl= new levels(window,&font);
-	undo_b = new button ( 600,760,130,60,30,&font,"Undo",Color(255,135,255));
-	restart_b = new button ( 335,760,130,60,30,&font,"Restart",Color(290,160,221));
-	exit_b = new button ( 70,760,130,60,30,&font,"Exit",Color(221,160,171));
-	next= new button (600,760,170,60,30,&font,"Next Level",Color(221,100,221));
-	return_b = new button ( 335,760,130,60,30,&font,"Return",Color(221,260,221));
+	undo_b = new button ( 600,760,130,60,30,&font,"Undo",Color(216,138,214));
+	restart_b = new button ( 335,760,130,60,30,&font,"Restart",Color(216,138,214));
+	exit_b = new button ( 70,760,130,60,30,&font,"Exit",Color(216,138,214));
+	next= new button (600,760,170,60,30,&font,"Next Level",Color(216,138,214));
+	return_b = new button ( 335,760,130,60,30,&font,"Return",Color(230,183,203));
 
     player.loadFromFile("res/boy.png");
     player.setSmooth(true);
