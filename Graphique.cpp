@@ -86,10 +86,11 @@ bool Graphique::about_us()
 {
     window->clear();
     Text text;
-    text.setCharacterSize(30);
+    text.setCharacterSize(20);
+    text.setPosition(20,50);
     text.setColor(Color::Black);
     text.setFont(font);
-    text.setString("first year ");
+    text.setString("Wassar Asma,  Wanis Nour,  Oueslati Mohamed Amine and Ben Mbarek \n Akrem first year engineering students at National School for Computer \n Science (ENSI).\n  ");
     window->draw(s_background);
     window->draw(text);
     return_b->render(window);
