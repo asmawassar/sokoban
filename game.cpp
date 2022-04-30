@@ -190,7 +190,6 @@ void Game::win_f(int n,string txt)
             }
             if (Ggame.next->ispressed())
             {
-                Ggame.music.stop();
                 play(n+1);
             }
         }
