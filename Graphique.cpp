@@ -2,10 +2,10 @@
 
 Graphique::Graphique()
 {
-	window = new RenderWindow(VideoMode(800, 870), "Sokoban");
-	icon.loadFromFile("res/icon.jpeg");
-	window->setIcon(50,50, icon.getPixelsPtr());
-	window->setFramerateLimit(60);
+    window = new RenderWindow(VideoMode(800, 870), "Sokoban");
+    icon.loadFromFile("res/icon.jpeg");
+    window->setIcon(50,50, icon.getPixelsPtr());
+    window->setFramerateLimit(60);
     font.loadFromFile("res/nasalization.otf");
     Menu = new menu(window,&this->font);
 
@@ -14,11 +14,11 @@ Graphique::Graphique()
     sound.play();
 
     lvl= new levels(window,&font);
-	undo_b = new button ( 600,760,130,60,30,&font,"Undo",Color(216,138,214));
-	restart_b = new button ( 335,760,130,60,30,&font,"Restart",Color(216,138,214));
-	exit_b = new button ( 70,760,130,60,30,&font,"Exit",Color(216,138,214));
-	next= new button (600,760,170,60,30,&font,"Next Level",Color(216,138,214));
-	return_b = new button ( 335,760,130,60,30,&font,"Return",Color(230,183,203));
+    undo_b = new button ( 600,760,130,60,30,&font,"Undo",Color(216,138,214));
+    restart_b = new button ( 335,760,130,60,30,&font,"Restart",Color(216,138,214));
+    exit_b = new button ( 70,760,130,60,30,&font,"Exit",Color(216,138,214));
+    next= new button (600,760,170,60,30,&font,"Next Level",Color(216,138,214));
+    return_b = new button ( 335,760,130,60,30,&font,"Return",Color(230,183,203));
 
     player.loadFromFile("res/boy.png");
     player.setSmooth(true);
@@ -30,7 +30,7 @@ Graphique::Graphique()
     background.loadFromFile("res/background.jpg");
     s_background.setTexture(background);
 
-     Manual.loadFromFile("res/manual.png");
+    Manual.loadFromFile("res/manual.png");
     s_Manual.setTexture(Manual);
 
     character.loadFromFile("res/textures.png");
@@ -57,7 +57,7 @@ Graphique::~Graphique()
 void Graphique::input(Event event, RenderWindow *window)
 {
     if (event.type==Event::Closed)
-           window->close();
+        window->close();
 
     if ( event.key.code==Keyboard::Escape)
         window->close();
@@ -86,50 +86,50 @@ bool Graphique::about_us()
 {
     window->clear();
     Text text;
-    text.setCharacterSize(20);
-    text.setPosition(20,50);
+    text.setCharacterSize(25);
+    text.setPosition(50,50);
     text.setColor(Color::Black);
     text.setFont(font);
-    text.setString("Wassar Asma,  Wanis Nour,  Oueslati Mohamed Amine and Ben Mbarek \n Akrem first year engineering students at National School for Computer \n Science (ENSI).\n  ");
+    text.setString(" This game was developed by first year engineering\n students at National School for Computer  Science\n Tunisia (ENSI) as part of a programming project:\n\n \t\t\t Wassar Asma \n \t\t\t Oueslati Mohamed Amine \n \t\t\t Ben Mbarek Akrem \n \t\t\t Wanis Nour \n ");
     window->draw(s_background);
     window->draw(text);
     return_b->render(window);
     window->display();
-       while (window->isOpen())
-       {
-           Event event;
-            while (window->pollEvent(event))
-            {
-                float x1,y1;
-                x1=Mouse::getPosition(*window).x;
-                y1=Mouse::getPosition(*window).y;
-                return_b->update(x1,y1);
-                if(return_b->ispressed())
-                    return start();
-            }
-         input(event,window);
+    while (window->isOpen())
+    {
+        Event event;
+        while (window->pollEvent(event))
+        {
+            float x1,y1;
+            x1=Mouse::getPosition(*window).x;
+            y1=Mouse::getPosition(*window).y;
+            return_b->update(x1,y1);
+            if(return_b->ispressed())
+                return start();
         }
+        input(event,window);
+    }
 }
 bool Graphique::Manual_f()
 {
-   window->clear();
-   window->draw(s_Manual);
-   return_b->render(window);
-   window->display();
-   while (window->isOpen())
-       {
-           Event event;
-           input(event,window);
-            while (window->pollEvent(event))
-            {
-                float x1,y1;
-                x1=Mouse::getPosition(*window).x;
-                y1=Mouse::getPosition(*window).y;
-                return_b->update(x1,y1);
-                if(return_b->ispressed())
-                    return start();
-            }
+    window->clear();
+    window->draw(s_Manual);
+    return_b->render(window);
+    window->display();
+    while (window->isOpen())
+    {
+        Event event;
+        input(event,window);
+        while (window->pollEvent(event))
+        {
+            float x1,y1;
+            x1=Mouse::getPosition(*window).x;
+            y1=Mouse::getPosition(*window).y;
+            return_b->update(x1,y1);
+            if(return_b->ispressed())
+                return start();
         }
+    }
 }
 bool Graphique::choose_char()
 {
@@ -157,57 +157,57 @@ bool Graphique::choose_char()
     window->display();
     Event event;
     while (window->isOpen())
-       {
-            Event event;
-            input(event, window);
-            while (window->pollEvent(event))
+    {
+        Event event;
+        input(event, window);
+        while (window->pollEvent(event))
+        {
+            float x1,y1;
+            x1=Mouse::getPosition(*window).x;
+            y1=Mouse::getPosition(*window).y;
+            return_b->update(x1,y1);
+            if(return_b->ispressed())
             {
-                float x1,y1;
-                x1=Mouse::getPosition(*window).x;
-                y1=Mouse::getPosition(*window).y;
-                return_b->update(x1,y1);
-                if(return_b->ispressed())
-                    {
-                        return start();
-                    }
-                if(Mouse::isButtonPressed(Mouse::Left))
+                return start();
+            }
+            if(Mouse::isButtonPressed(Mouse::Left))
+            {
+                if(boy.getGlobalBounds().contains(x1,y1))
                 {
-                    if(boy.getGlobalBounds().contains(x1,y1))
-                        {
-                            click.play();
-                            player.loadFromFile("res/boy.png");
-                            boy.setScale(1.25,1.25);
-                            girl.setScale(1,1);
-                            boy_2.setScale(1,1);
-                            girl_2.setScale(1,1);
-                           }
-                   else if(girl.getGlobalBounds().contains(x1,y1))
-                        {
-                            click.play();
-                            player.loadFromFile("res/girl2.png");
-                            boy.setScale(1,1);
-                            girl.setScale(1.25,1.25);
-                            boy_2.setScale(1,1);
-                            girl_2.setScale(1,1);
-                     }
-                   else if(boy_2.getGlobalBounds().contains(x1,y1))
-                        {
-                            click.play();
-                            player.loadFromFile("res/boy2.png");
-                            boy.setScale(1,1);
-                            girl.setScale(1,1);
-                            boy_2.setScale(1.25,1.25);
-                            girl_2.setScale(1,1);
-                      }
-                   else if(girl_2.getGlobalBounds().contains(x1,y1))
-                        {
-                            click.play();
-                            player.loadFromFile("res/girl.png");
-                            boy.setScale(1,1);
-                            girl.setScale(1,1);
-                            boy_2.setScale(1,1);
-                            girl_2.setScale(1.25,1.25);
-                     }
+                    click.play();
+                    player.loadFromFile("res/boy.png");
+                    boy.setScale(1.25,1.25);
+                    girl.setScale(1,1);
+                    boy_2.setScale(1,1);
+                    girl_2.setScale(1,1);
+                }
+                else if(girl.getGlobalBounds().contains(x1,y1))
+                {
+                    click.play();
+                    player.loadFromFile("res/girl2.png");
+                    boy.setScale(1,1);
+                    girl.setScale(1.25,1.25);
+                    boy_2.setScale(1,1);
+                    girl_2.setScale(1,1);
+                }
+                else if(boy_2.getGlobalBounds().contains(x1,y1))
+                {
+                    click.play();
+                    player.loadFromFile("res/boy2.png");
+                    boy.setScale(1,1);
+                    girl.setScale(1,1);
+                    boy_2.setScale(1.25,1.25);
+                    girl_2.setScale(1,1);
+                }
+                else if(girl_2.getGlobalBounds().contains(x1,y1))
+                {
+                    click.play();
+                    player.loadFromFile("res/girl.png");
+                    boy.setScale(1,1);
+                    girl.setScale(1,1);
+                    boy_2.setScale(1,1);
+                    girl_2.setScale(1.25,1.25);
+                }
                 player.setSmooth(true);
                 s_player.setTexture(player);
                 window->clear();
@@ -218,9 +218,9 @@ bool Graphique::choose_char()
                 window->draw(girl_2);
                 return_b->render(window);
                 window->display();
-                }
             }
-       }
+        }
+    }
 }
 bool Graphique::start()
 {
@@ -240,21 +240,21 @@ bool Graphique::start()
             ty=Mouse::getPosition(*window).y;
             Menu->update_menu(tx,ty);
             if (Menu->play->ispressed())
-                {
-                    return true;
-                }
+            {
+                return true;
+            }
             if(Menu->choose_char->ispressed())
-                {
-                    return choose_char();
-                }
+            {
+                return choose_char();
+            }
             if(Menu->manual->ispressed())
-                {
-                    return Manual_f();
-                }
+            {
+                return Manual_f();
+            }
             if(Menu->about->ispressed())
-                {
-                    return about_us();
-                }
+            {
+                return about_us();
+            }
         }
         input(event, window);
     }

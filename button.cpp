@@ -1,7 +1,7 @@
 #include "Button.h"
 
-button::button(float x, float y,float width ,float height,int siz,Font *fnt ,string txt,
-                Color idlecolor)
+button::button(float x, float y,float width,float height,int siz,Font *fnt,string txt,
+               Color idlecolor)
 {
     buttonState=BTN_IDLE;
 
@@ -55,7 +55,7 @@ const bool button::ispressed() const
     if(buttonState==BTN_ACTIVE)
     {
         return true;
-        }
+    }
     return false;
 }
 void button::change_pos(int x, int y)

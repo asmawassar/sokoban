@@ -2,9 +2,9 @@
 
 levels::levels(RenderWindow *window, Font *font)
 {
-    for(int i=0;i<3;i++)
+    for(int i=0; i<3; i++)
     {
-        for(int j=0;j<5;j++)
+        for(int j=0; j<5; j++)
         {
             string ch=to_string(i*5+j+1);
             level.push_back( button( 100+j*132.5,150+i*132.5,80,80,42,font,ch,Color(255,160,i*25+j*20+122)));
@@ -24,11 +24,11 @@ int levels::choose_level(RenderWindow *window)
     int n=1;
     float x1=Mouse::getPosition(*window).x;
     float y1=Mouse::getPosition(*window).y;
-    for(int i=0;i<3;i++)
+    for(int i=0; i<3; i++)
     {
         int y_min= 150+i*132.5;
         int y_max= y_min+70;
-        for(int j=0;j<5;j++)
+        for(int j=0; j<5; j++)
         {
             int x_min= 100+j*132.5;
             int x_max= x_min+70;

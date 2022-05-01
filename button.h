@@ -5,28 +5,28 @@
 using namespace std;
 using namespace sf;
 
-enum button_states{BTN_IDLE=0,BTN_ACTIVE};
+enum button_states {BTN_IDLE=0,BTN_ACTIVE};
 
 class button
 {
-    public:
-        button(float, float,float ,float,int ,Font* ,string,Color);
-        virtual ~button(){};
-        void render(RenderWindow*);
-        void update( float,float);
-        const bool ispressed() const;
-        void change_pos(int,int);
-        string get_text();
-        RectangleShape shape;
-        Text text;
-    protected:
+public:
+    button(float, float,float,float,int,Font*,string,Color);
+    virtual ~button() {};
+    void render(RenderWindow*);
+    void update( float,float);
+    const bool ispressed() const;
+    void change_pos(int,int);
+    string get_text();
+    RectangleShape shape;
+    Text text;
+protected:
 
-    private:
-        short unsigned buttonState;
+private:
+    short unsigned buttonState;
 
 
 
-        void setpos();
+    void setpos();
 };
 
 #endif // BUTTON_H

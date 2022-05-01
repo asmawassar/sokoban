@@ -244,7 +244,7 @@ string Game::temps(Time time)
     text.setCharacterSize(25);
     text.setColor(Color::Black);
     text.setFont(Ggame.font);
-    text.setPosition(150,100);
+    text.setPosition(150,50);
     int s=(time.asSeconds());
     int h=0;
     int m=0;
@@ -261,8 +261,8 @@ string Game::temps(Time time)
     ch+=to_string(h)+":"+to_string(m)+":"+to_string(s);
     text.setString(ch);
     Ggame.window->draw(text);
-    text.setPosition(50,100);
-    text.setString("time ");
+    text.setPosition(50,50);
+    text.setString("time = ");
     Ggame.window->draw(text);
     return ch;
 }

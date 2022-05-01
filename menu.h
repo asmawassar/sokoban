@@ -8,18 +8,18 @@ using namespace sf;
 
 class menu
 {
-    public:
-        menu(RenderWindow *, Font *);
-        virtual ~menu();
-        void draw_menu(RenderWindow*);
-        void update_menu(float,float);
-        button *play;
-        button *choose_char;
-        button *manual;
-        button *about;
-    protected:
+public:
+    menu(RenderWindow *, Font *);
+    virtual ~menu();
+    void draw_menu(RenderWindow*);
+    void update_menu(float,float);
+    button *play;
+    button *choose_char;
+    button *manual;
+    button *about;
+protected:
 
-    private:
+private:
 
 };
 
